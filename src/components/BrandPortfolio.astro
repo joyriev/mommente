@@ -31,7 +31,12 @@ import { BRAND_PROJECTS } from "../constants";
     >
       {
         BRAND_PROJECTS.map((project) => (
-          <div class="group relative bg-brand-offwhite aspect-[4/5] overflow-hidden cursor-pointer">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative bg-brand-offwhite aspect-[4/5] overflow-hidden cursor-pointer block"
+          >
             <img
               src={project.imageUrl}
               alt={project.title}
@@ -50,7 +55,7 @@ import { BRAND_PROJECTS } from "../constants";
                 <div class="ml-3 w-8 h-px bg-white" />
               </div>
             </div>
-          </div>
+          </a>
         ))
       }
       <div
@@ -60,12 +65,12 @@ import { BRAND_PROJECTS } from "../constants";
           <p
             class="text-brand-charcoal/40 group-hover:text-brand-offwhite/30 text-[10px] uppercase tracking-[0.4em] font-bold transition-colors"
           >
-            Venture Lab
+            Mommente Lab
           </p>
           <h3
             class="text-3xl font-sans font-black uppercase tracking-tighter group-hover:text-brand-offwhite transition-colors"
           >
-            Upcoming<br />Releases
+            More<br />Coming Soon
           </h3>
           <div
             class="w-12 h-0.5 bg-brand-gold mx-auto group-hover:w-20 transition-all"
