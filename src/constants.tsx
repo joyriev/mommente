@@ -74,7 +74,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&h=800&fit=crop",
   },
   {
-    name: "Mehdi",
+    name: "Mehedi",
     role: "Full-Stack Developer",
     description:
       "Architect of our digital ecosystem. Mehdi ensures our platforms are fast, reliable, and user-friendly.",

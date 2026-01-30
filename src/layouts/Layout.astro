@@ -1,8 +1,8 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,58 +10,66 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Mommente | Intentional Essential Goods" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-	</head>
-	<body class="selection:bg-brand-gold selection:text-white overflow-x-hidden">
-		<slot />
-		
-		<script>
-			// Reveal animation observer
-			const observerOptions = {
-				root: null,
-				rootMargin: '-50px 0px',
-				threshold: 0.1
-			};
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Mommente | Intentional Essential Goods" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
 
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('active');
-					}
-				});
-			}, observerOptions);
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="selection:bg-brand-gold selection:text-white overflow-x-hidden">
+    <slot />
 
-			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    <script>
+      // Reveal animation observer
+      const observerOptions = {
+        root: null,
+        rootMargin: "-50px 0px",
+        threshold: 0.1,
+      };
 
-			// Smooth scroll
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function (e) {
-					const href = this.getAttribute('href');
-					if (!href || href === '#') return;
-					
-					e.preventDefault();
-					const targetId = href.substring(1);
-					const targetElement = document.getElementById(targetId);
-					if (targetElement) {
-						const navHeight = 90;
-						const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
-						window.scrollTo({
-							top: targetPosition,
-							behavior: 'smooth'
-						});
-					}
-				});
-			});
-		</script>
-	</body>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (!href || href === "#") return;
+
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const navHeight = 60;
+            const targetPosition =
+              targetElement.getBoundingClientRect().top +
+              window.pageYOffset -
+              navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
