@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero.astro";
+import FounderSection from "../components/FounderSection.astro";
+import PhilosophySection from "../components/PhilosophySection.astro";
+import BrandPortfolio from "../components/BrandPortfolio.astro";
+import TeamSection from "../components/TeamSection.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Mommente | Intentional Essential Goods">
+  <Navbar client:load />
+  <main>
+    <Hero />
+
+    <div class="reveal">
+      <FounderSection />
+    </div>
+
+    <div class="reveal">
+      <BrandPortfolio />
+    </div>
+
+    <div class="reveal">
+      <PhilosophySection />
+    </div>
+
+    <div class="reveal">
+      <TeamSection />
+    </div>
+
+    <section class="py-32 md:py-56 bg-brand-charcoal relative overflow-hidden">
+      <div
+        class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none overflow-hidden select-none"
+      >
+        <div
+          class="text-[35vw] font-black text-white whitespace-nowrap -translate-x-1/4 translate-y-1/4 leading-none"
+        >
+          MOMMENTE
+        </div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10 text-center max-w-7xl">
+        <div class="max-w-3xl mx-auto mb-20 space-y-8">
+          <span
+            class="text-xs uppercase tracking-[0.6em] font-black text-brand-gold"
+            >The Future</span
+          >
+          <p
+            class="text-2xl md:text-4xl text-brand-offwhite/80 font-light leading-tight"
+          >
+            Mommente is scaling. We continue to build brands that matter,
+            products that last, and experiences people remember.
+          </p>
+        </div>
+
+        <h2
+          class="text-6xl md:text-[10vw] font-sans font-black uppercase text-brand-offwhite tracking-tighter leading-none mb-16"
+        >
+          Living <br />
+          <span class="text-brand-gold italic font-serif font-light lowercase"
+            >elevated.</span
+          >
+        </h2>
+
+        <div class="pt-12">
+          <a
+            href="mailto:hello@mommente.com"
+            class="group relative inline-flex items-center justify-center bg-brand-gold text-brand-charcoal px-16 py-7 overflow-hidden transition-all duration-500 hover:shadow-2xl"
+          >
+            <span
+              class="relative z-10 uppercase text-[11px] tracking-[0.5em] font-black group-hover:text-white transition-colors duration-500"
+              >Inquire Within</span
+            >
+            <div
+              class="absolute inset-0 bg-brand-charcoal translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out"
+            >
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
